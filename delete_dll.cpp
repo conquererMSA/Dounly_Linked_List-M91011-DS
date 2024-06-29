@@ -46,6 +46,12 @@ void deleteFromPosition(Node*head, int pos){
     deleteNode->next->prev=temp;
     delete deleteNode;
 }
+void deleteFromTail(Node*&tail){
+    Node* deleteNode=tail;
+    tail=tail->prev;
+    tail->next=NULL;
+    delete deleteNode;
+}
 int main(){
     // Node*head=NULL;
     // Node*tail=NULL;
@@ -70,7 +76,8 @@ int main(){
     printLLRevers(tail);
     cout<<"after deleteion: "<<endl;
 
-    deleteFromPosition(head,pos);
+    // deleteFromPosition(head,pos);
+    deleteFromTail(tail);
     printLLStraight(head);
     printLLRevers(tail);
 
