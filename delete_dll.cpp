@@ -78,13 +78,20 @@ int main(){
     c->prev=b;
     int pos;
     cin>>pos;
-    printLLStraight(head);
-    printLLRevers(tail);
-    cout<<"after deleteion: "<<endl;
-
-    // deleteFromPosition(head,pos);
-    // deleteFromTail(tail);
-    deleteFromHead(head);
+    //corner case and validation
+    if(pos>=countDLLsize(head)){
+        cout<<"Invalid"<<endl;
+    }
+    else if(pos==countDLLsize(head)-1){
+        deleteFromTail(tail);
+    }
+    else if(pos==0){
+        deleteFromHead(head);
+    }
+    else{
+        deleteFromPosition(head,pos);
+    }
+    // 4 2 1 0
     printLLStraight(head);
     printLLRevers(tail);
 
