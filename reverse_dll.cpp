@@ -47,6 +47,15 @@ void reverseDLL(Node* head,Node* tail){
      i=i->next;
      j=j->prev;
    }
+
+// while(1){ //seg fault
+//     if(i==j && i->next==j){
+//         break;
+//     }
+//      swap(i->val,j->val);
+//      j=j->prev;
+//      i=i->next;
+//    }
 }
 int main(){
     Node*head=NULL;
